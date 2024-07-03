@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .reset-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .reset-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Java Programming Test</h1>
+        <form id="java-programming-test">
+            <div class="question">
+                <h2>Question 1: What is the output of the following code?</h2>
+                <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                </pre>
+                <ul class="options">
+                    <li><input type="radio" name="q1" id="q1a" value="Hello, World!"><label for="q1a">Hello, World!</label></li>
+                    <li><input type="radio" name="q1" id="q1b" value="Hello World"><label for="q1b">Hello World</label></li>
+                    <li><input type="radio" name="q1" id="q1c" value="hello, world!"><label for="q1c">hello, world!</label></li>
+                    <li><input type="radio" name="q1" id="q1d" value="Compile Error"><label for="q1d">Compile Error</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 2: Which of the following is a correct way to declare an integer variable in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q2" id="q2a" value="int x;"><label for="q2a">int x;</label></li>
+                    <li><input type="radio" name="q2" id="q2b" value="integer x;"><label for="q2b">integer x;</label></li>
+                    <li><input type="radio" name="q2" id="q2c" value="var x;"><label for="q2c">var x;</label></li>
+                    <li><input type="radio" name="q2" id="q2d" value="Int x;"><label for="q2d">Int x;</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 3: Which of the following is a valid class declaration in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q3" id="q3a" value="class MyClass { }"><label for="q3a">class MyClass { }</label></li>
+                    <li><input type="radio" name="q3" id="q3b" value="class MyClass { int x; }"><label for="q3b">class MyClass { int x; }</label></li>
+                    <li><input type="radio" name="q3" id="q3c" value="class MyClass { private int x; }"><label for="q3c">class MyClass { private int x; }</label></li>
+                    <li><input type="radio" name="q3" id="q3d" value="All of the above"><label for="q3d">All of the above</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 4: Which of the following is the correct syntax for a method declaration in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q4" id="q4a" value="void MyMethod() { }"><label for="q4a">void MyMethod() { }</label></li>
+                    <li><input type="radio" name="q4" id="q4b" value="void MyMethod { }"><label for="q4b">void MyMethod { }</label></li>
+                    <li><input type="radio" name="q4" id="q4c" value="void MyMethod();"><label for="q4c">void MyMethod();</label></li>
+                    <li><input type="radio" name="q4" id="q4d" value="void MyMethod; { }"><label for="q4d">void MyMethod; { }</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 5: Which of the following is used to define a property in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q5" id="q5a" value="int MyProperty { get; set; }"><label for="q5a">int MyProperty { get; set; }</label></li>
+                    <li><input type="radio" name="q5" id="q5b" value="int MyProperty { get { return x; } set { x = value; } }"><label for="q5b">int MyProperty { get { return x; } set { x = value; } }</label></li>
+                    <li><input type="radio" name="q5" id="q5c" value="int MyProperty { get; private set; }"><label for="q5c">int MyProperty { get; private set; }</label></li>
+                    <li><input type="radio" name="q5" id="q5d" value="None of the above"><label for="q5d">None of the above</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 6: What does the keyword 'static' indicate in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q6" id="q6a" value="A method that belongs to a class"><label for="q6a">A method that belongs to a class</label></li>
+                    <li><input type="radio" name="q6" id="q6b" value="A method that belongs to an instance of a class"><label for="q6b">A method that belongs to an instance of a class</label></li>
+                    <li><input type="radio" name="q6" id="q6c" value="A method that cannot be overridden"><label for="q6c">A method that cannot be overridden</label></li>
+                    <li><input type="radio" name="q6" id="q6d" value="A method that is abstract"><label for="q6d">A method that is abstract</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 7: Which of the following is the correct way to define an interface in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q7" id="q7a" value="interface MyInterface { void MyMethod(); }"><label for="q7a">interface MyInterface { void MyMethod(); }</label></li>
+                    <li><input type="radio" name="q7" id="q7b" value="interface MyInterface { int MyProperty { get; set; } }"><label for="q7b">interface MyInterface { int MyProperty { get; set; } }</label></li>
+                    <li><input type="radio" name="q7" id="q7c" value="interface MyInterface { string MyMethod(string x); }"><label for="q7c">interface MyInterface { string MyMethod(string x); }</label></li>
+                    <li><input type="radio" name="q7" id="q7d" value="None of the above"><label for="q7d">None of the above</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 8: Which of the following is used to define a package in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q8" id="q8a" value="package mypackage;"><label for="q8a">package mypackage;</label></li>
+                    <li><input type="radio" name="q8" id="q8b" value="namespace mypackage;"><label for="q8b">namespace mypackage;</label></li>
+                    <li><input type="radio" name="q8" id="q8c" value="module mypackage;"><label for="q8c">module mypackage;</label></li>
+                    <li><input type="radio" name="q8" id="q8d" value="library mypackage;"><label for="q8d">library mypackage;</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 9: Which of the following is the correct way to handle exceptions in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q9" id="q9a" value="try { } catch { }"><label for="q9a">try { } catch { }</label></li>
+                    <li><input type="radio" name="q9" id="q9b" value="try { } catch (Exception e) { }"><label for="q9b">try { } catch (Exception e) { }</label></li>
+                    <li><input type="radio" name="q9" id="q9c" value="try { } finally { }"><label for="q9c">try { } finally { }</label></li>
+                    <li><input type="radio" name="q9" id="q9d" value="All of the above"><label for="q9d">All of the above</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 10: Which of the following is used to define a lambda expression in Java?</h2>
+                <ul class="options">
+                    <li><input type="radio" name="q10" id="q10a" value="() -> System.out.println('Hello, World!');"><label for="q10a">() -> System.out.println('Hello, World!');</label></li>
+                    <li><input type="radio" name="q10" id="q10b" value="lambda() { System.out.println('Hello, World!'); }"><label for="q10b">lambda() { System.out.println('Hello, World!'); }</label></li>
+                    <li><input type="radio" name="q10" id="q10c" value="function() { System.out.println('Hello, World!'); }"><label for="q10c">function() { System.out.println('Hello, World!'); }</label></li>
+                    <li><input type="radio" name="q10" id="q10d" value="lambda() -> { System.out.println('Hello, World!'); }"><label for="q10d">lambda() -> { System.out.println('Hello, World!'); }</label></li>
+                </ul>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

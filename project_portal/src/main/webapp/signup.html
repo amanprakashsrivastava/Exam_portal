@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        form {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form.visible {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <h1>Welcome to Quiz Portal</h1>
+        <a href="#" class="btn" onclick="showUserSignupForm()">User Signup</a>
+        <a href="#" class="btn" onclick="showAdminSignupForm()">Admin Signup</a>
+        
+        
+        
+        
+        
+
+        <!-- User Signup Form -->
+        <form action="userdb.jsp" id="user-signup-form" class="form">
+            <h2>User Signup</h2>
+            <div class="form-group">
+                <label for="user-email">Email:</label>
+                <input type="text" id="user-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="user-phone">Phone Number:</label>
+                <input type="tel" id="user-phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="user-password">Password:</label>
+                <input type="password" id="user-password" name="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+
+
+
+
+
+
+
+        <!-- Admin Signup Form -->
+        <form action="admindb.jsp" id="admin-signup-form" class="form">
+            <h2>Admin Signup</h2>
+            <div class="form-group">
+                <label for="admin-email">Email:</label>
+                <input type="text" id="admin-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-phone">Phone Number:</label>
+                <input type="tel" id="admin-phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" name="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        
+        
+        
+        
+        
+
+        <!-- Login Form -->
+        <form action="admin.html" id="login-form" class="form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+            <div action="index.html" class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function showUserSignupForm() {
+            document.getElementById('user-signup-form').classList.add('visible');
+        }
+
+        function showAdminSignupForm() {
+            document.getElementById('admin-signup-form').classList.add('visible');
+        }
+
+        document.getElementById('user-signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('user-signup-form').classList.remove('visible');
+            document.getElementById('login-form').classList.add('visible');
+            // Here you would implement user signup logic (e.g., store data, send to server)
+        });
+
+        document.getElementById('admin-signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('admin-signup-form').classList.remove('visible');
+            document.getElementById('login-form').classList.add('visible');
+            // Here you would implement admin signup logic (e.g., store data, send to server)
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Perform login logic here (e.g., send credentials to server)
+            alert('Login logic will be implemented here.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="javax.servlet.*" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Test Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: whitesmoke;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        li:hover {
+            background: #ddd;
+        }
+    </style>
+    <script>
+        function redirectToQuestions(language) {
+            window.location.href = language + ".html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>PROGRAMMING</h1>
+        <%
+            HttpSession session = request.getSession(false);
+            String username = (String) session.getAttribute("username");
+            if (username != null) {
+                out.println("<p>Welcome, " + username + "!</p>");
+            } else {
+                response.sendRedirect("RolesUser.jsp"); // Redirect to login if session not found
+            }
+        %>
+        <ul>
+            <li onclick="redirectToQuestions('c_programming')">C programming</li>
+            <li onclick="redirectToQuestions('cpp_programming')">C++ programming</li>
+            <li onclick="redirectToQuestions('Python_programming')">Python programming</li>
+            <li onclick="redirectToQuestions('java_programming')">Java programming</li>
+        </ul>
+    </div>
+</body>
+</html>

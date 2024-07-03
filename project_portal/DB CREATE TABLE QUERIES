@@ -1,0 +1,90 @@
+USE genpact;
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+select * from admins
+
+use genpact;
+CREATE TABLE IF NOT EXISTS userTable (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+INSERT INTO userTable (email, phone, password) VALUES ('user@example.com', '1234567890', 'userpassword');
+select * from admins
+select * from userTable
+delete from users where email='Sri';
+
+-- Alter table to add new field ADMid
+ALTER TABLE admins
+ADD ADMid VARCHAR(10) NOT NULL DEFAULT 'adm12345';
+
+
+CREATE TABLE question_lists (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tag VARCHAR(100) NOT NULL,
+    num_questions INT NOT NULL
+);
+
+CREATE DATABASE questionDB;
+
+USE questionDB;
+
+CREATE TABLE questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT NOT NULL,
+    option1 TEXT NOT NULL,
+    option2 TEXT NOT NULL,
+    option3 TEXT NOT NULL,
+    option4 TEXT NOT NULL,
+    correctOption TEXT NOT NULL,
+    tag VARCHAR(255) NOT NULL
+);
+select * from questions;
+
+drop table questions;
+SELECT * FROM questions WHERE tag ='C Programming';
+ALTER TABLE questions auto_increment=1;
+DELETE FROM questions where id=14;
+use genpact;
+CREATE TABLE results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId VARCHAR(255),
+    questionId INT NOT NULL,
+    selectedOption VARCHAR(10) NOT NULL
+);
+drop table results;
+
+select * from results
+USE genpact;
+DELETE FROM questions WHERE tag = 'C Programming';
+
+DELETE FROM questions WHERE tag = 'C Programming' AND id IS NOT NULL;
+
+
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE FROM questions WHERE tag = 'C Programming';
+
+SET SQL_SAFE_UPDATES = 1;  -- (Optional) Re-enable safe updates
+
+
+CREATE TABLE final_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    language VARCHAR(50),
+    total_questions INT,
+    correct_answers INT,
+    percentage DOUBLE,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM final_results;
