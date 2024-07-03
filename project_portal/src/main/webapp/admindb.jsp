@@ -45,6 +45,10 @@
             out.println("Admin record inserted successfully!");
         } else {
             out.println("Failed to insert admin record.");
+            out.println("<p class='error'>Invalid Username or password.</p>");
+            out.println("<form action='RolesAdmin.jsp' method='post'>");
+            out.println("<input type='submit' value='Try Again!'>");
+            out.println("</form>");
         }
 
     } catch (ClassNotFoundException e) {
